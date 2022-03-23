@@ -48,8 +48,10 @@ export const Background = styled.footer`
       width: 2.5rem;
       height: auto;
       background-color: var(--dark-secondary-color);
+      transition: 0.2s;
       :hover {
         color: var(--main-color);
+        transform: scale(1.02);
       }
     }
   }

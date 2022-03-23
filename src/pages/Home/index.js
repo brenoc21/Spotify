@@ -1,5 +1,5 @@
 import React from "react";
-import { Background } from "./style";
+import { Background } from "./styles";
 import Button from "../../components/ButtonHome/index";
 import Footer from "../../components/Footer/index";
 import Header from "../../components/Header";
