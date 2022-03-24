@@ -2,7 +2,6 @@ import { Container, Li, Ul } from "./styles";
 
 export default function List() {
     return (
-        <Container>
             <Ul>
                 <Li>
                     <small>COMO ENTRAR</small>
@@ -21,7 +20,6 @@ export default function List() {
                     <a><b>Ajuda para entrar com o Facebook</b></a>
                 </Li>
             </Ul>
-        </Container>
 
     )
 }

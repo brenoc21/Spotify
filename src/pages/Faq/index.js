@@ -12,18 +12,28 @@ export default function Faq() {
       <Background>
         <Header />
         <h1>
-          Quer uma <b id="pun">camarão</b>zinha?
+          Quer uma <b id="pun">camarão</b>judinha?
         </h1>
-        <input></input>
+        <div className="searchbar">
+          <span className="material-icons-outlined">
+            search
+          </span>
+          <input></input>
+        </div>
         <List />
       </Background>
       <Table />
       <Container>
-        <h1>Visite a Comunidade</h1>
-        <p>Tem uma pergunta? Encontre respostas na nossa Comunidade de fãs especialistas do mundo todo!</p>
-        <a>
-          <ButtonHome text="Encontrar respostas" type="1"></ButtonHome>
-        </a>
+        <div>
+          <h1>Visite a Comunidade</h1>
+          <p>Tem uma pergunta? Encontre respostas na nossa Comunidade de fãs especialistas do mundo todo!</p>
+          <a>
+            <ButtonHome
+              text="Encontrar respostas"
+              type="2">
+            </ButtonHome>
+          </a>
+        </div>
       </Container>
       <Footer />
     </>
