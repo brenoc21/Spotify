@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 const GlobalStyle = createGlobalStyle`
 
 :root {
@@ -9,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
     --light-color: #efd9ce;
     --dark-color: #080708;
     --dark-secondary-color: #25283d;
+    --gray:#1a1a1a;
+    --dark-third-color: #121212;
     --white: #fff;
 }
 
@@ -39,5 +40,5 @@ p, h1, h2, h3, h4{
 input:focus {
     outline: none;
 }
-`
+`;
 export default GlobalStyle;
