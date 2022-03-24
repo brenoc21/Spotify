@@ -10,7 +10,9 @@ export default function Footer() {
   return (
     <Background>
       <div id="up">
-        <Logo type="footer"></Logo>
+        <div className="LogoContainer">
+          <Logo type="footer"></Logo>
+        </div>
         <ul>
           <li>
             <h4>EMPRESA</h4>

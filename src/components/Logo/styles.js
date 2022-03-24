@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Shrimp = styled.a`
-    img{
-        height: 6rem;
-        width: auto;
-    }
-`
+  img {
+    height: 100%;
+    width: auto;
+  }
+`;
