@@ -74,7 +74,7 @@ export const Background = styled.footer`
       }
     }
   }
-  @media (max-width: 1600px) {
+  @media (max-width: 1920px) {
     width: 100%;
     padding: 4rem 0%;
     padding-bottom: 2rem;
