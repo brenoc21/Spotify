@@ -6,6 +6,9 @@ export const Background = styled.footer`
   width: 70%;
   padding: 4rem 15% 2rem 15%;
   background-color: var(--dark-color);
+  .LogoContainer {
+    height: 6rem;
+  }
   .logo {
     padding: 0.75rem;
     border-radius: 100%;
