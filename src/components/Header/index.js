@@ -13,8 +13,9 @@ export default function Header() {
         <HeaderItem href="https://www.spotify.com/br/download/linux/">
           Baixar
         </HeaderItem>
-        |<HeaderItem href="./signin/index.html">Inscreva-se</HeaderItem>
-        <HeaderItem onClick={() => navigate("/playlist")}>Entrar</HeaderItem>
+        |
+        <HeaderItem onClick={() => navigate("/signin")}>Inscreva-se</HeaderItem>
+        <HeaderItem onClick={() => navigate("/login")}>Entrar</HeaderItem>
       </ItemsContainer>
     </HeaderBackground>
   );
