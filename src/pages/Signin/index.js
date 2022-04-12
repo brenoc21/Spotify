@@ -15,20 +15,23 @@ function Signin() {
     registerData.passwordConfirm !== registerData.password
       ? setPConfirm(true)
       : setPConfirm(false);
-  }, registerData.passwordConfirm);
+  }, [registerData.passwordConfirm]);
   useEffect(() => {
     registerData.emailConfirm !== registerData.email
       ? setEConfirm(true)
       : setEConfirm(false);
-  }, registerData.emailConfirm);
+  }, [registerData.emailConfirm]);
+  useEffect(() => {
+    console.log(registerData);
+  }, [registerData]);
   function handleSubmit(e) {
     e.preventDefault();
     console.log(registerData);
     if (registerData.email !== registerData.emailConfirm) {
-      return alert("Os e-mails devem ser iguais");
+      return alert("Os e-mails devem ser iguais.");
     }
     if (registerData.password !== registerData.passwordConfirm) {
-      return setIsError(["password", "passwordConfirm"]);
+      return alert("As senhas devem ser iguais.");
     }
   }
   return (

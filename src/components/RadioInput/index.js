@@ -2,7 +2,13 @@ import React from "react";
 
 import { RadioInputContainer, RadioBtn } from "./styles";
 
-function RadioInput({ title, options }) {
+function RadioInput({
+  title,
+  options,
+  setRegisterData,
+  registerData,
+  dataname,
+}) {
   return (
     <RadioInputContainer>
       <label>{title}</label>
@@ -17,7 +23,12 @@ function RadioInput({ title, options }) {
                   type="radio"
                   value={option}
                   required
-                  // onChange={(e) => setFormContent(e.target.value)}
+                  onChange={(e) =>
+                    setRegisterData({
+                      ...registerData,
+                      [dataname]: e.target.value,
+                    })
+                  }
                 />
                 <span className="checkmark"></span>
               </RadioBtn>
