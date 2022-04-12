@@ -3,6 +3,7 @@ import GlobalStyle from "./styles/global";
 import { Route, Routes } from "react-router-dom";
 import Faq from "./pages/Faq";
 import Playlist from "./pages/Playlist";
+import Signin from "./pages/Signin";
 function App() {
   return (
     <div className="App">
@@ -10,8 +11,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route exact path="/Faq" element={<Faq />}></Route>
-        <Route exac path="/Playlist" element={<Playlist />}></Route>
+        <Route exact path="/faq" element={<Faq />}></Route>
+        <Route exac path="/playlist" element={<Playlist />}></Route>
+        <Route path="/signin" element={<Signin />}></Route>
       </Routes>
     </div>
   );
