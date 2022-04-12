@@ -3,6 +3,7 @@ import GlobalStyle from "./styles/global";
 import { Route, Routes } from "react-router-dom";
 import Faq from "./pages/Faq";
 import Playlist from "./pages/Playlist";
+import PlaylistQueue from "./pages/PlaylistQueue";
 import Signin from "./pages/Signin";
 import Login from "./pages/Login";
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route exac path="/PlaylistQueue" element={<PlaylistQueue />}></Route>
         <Route exact path="/faq" element={<Faq />}></Route>
         <Route exac path="/playlist" element={<Playlist />}></Route>
         <Route path="/signin" element={<Signin />}></Route>
