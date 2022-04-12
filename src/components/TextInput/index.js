@@ -2,14 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { InputContainer } from "./styles";
 
-function TextInput({
-  placeholder,
-  type,
-  title,
-  setRegisterData,
-  registerData,
-  dataname,
-}) {
+function TextInput({ placeholder, type, title, setData, Data, dataname }) {
   return (
     <InputContainer>
       <label>{title}</label>
@@ -18,9 +11,7 @@ function TextInput({
         type={type}
         id={type}
         placeholder={placeholder}
-        onChange={(e) =>
-          setRegisterData({ ...registerData, [dataname]: e.target.value })
-        }
+        onChange={(e) => setData({ ...Data, [dataname]: e.target.value })}
       />
     </InputContainer>
   );

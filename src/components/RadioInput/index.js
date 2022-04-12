@@ -21,7 +21,15 @@ function RadioInput({
                   name={title}
                   id={option}
                   type="radio"
-                  value={option}
+                  value={
+                    option == "Masculino"
+                      ? "Male"
+                      : option == "Feminino"
+                      ? "Female"
+                      : option == "Outro"
+                      ? "Other"
+                      : option
+                  }
                   required
                   onChange={(e) =>
                     setRegisterData({

@@ -2,10 +2,10 @@ import React from "react";
 import Logo from "../Logo";
 import { NavBackground, Options, OptionItem } from "./styles";
 import home from "../../assets/home.svg";
-import library from "../../assets/Library.svg";
-import like from "../../assets/LikedSongs.svg";
-import search from "../../assets/Search.svg";
-import create from "../../assets/CreatePlaylist.svg";
+import library from "../../assets/library.svg";
+import like from "../../assets/likedSongs.svg";
+import search from "../../assets/search.svg";
+import create from "../../assets/createPlaylist.svg";
 
 export default function PlaylistNavbarLayout() {
   return (
