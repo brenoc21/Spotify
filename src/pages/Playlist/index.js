@@ -13,6 +13,11 @@ export default function Playlist() {
       <ContentArea>
         <CardArea>
           <SongCard picture={picture} title="Ronin" artist="Zoro"></SongCard>
+          <SongCard
+            picture={picture}
+            title="Playlist 2"
+            artist="Zoro"
+          ></SongCard>
         </CardArea>
       </ContentArea>
     </Layout>

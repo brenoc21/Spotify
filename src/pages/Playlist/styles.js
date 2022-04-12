@@ -12,5 +12,11 @@ export const ContentArea = styled.div`
   scrollbar-width: none;
 `;
 export const CardArea = styled.div`
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+
+  gap: 0.5rem;
   padding: 2rem;
 `;
