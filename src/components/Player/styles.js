@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const PlayerBG = styled.div`
-  position: fixed;
   min-width: 100vw;
   height: 13vh;
   bottom: 0;

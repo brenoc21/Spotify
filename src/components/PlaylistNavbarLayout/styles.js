@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const NavBackground = styled.nav`
   display: flex;
   flex-direction: column;
-  position: fixed;
   align-items: center;
   width: 13.5%;
   min-height: 87vh;
