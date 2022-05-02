@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ButtonContainer,
   CenterContent,
@@ -20,7 +20,30 @@ import radio from "../../assets/radio.svg";
 import volume from "../../assets/volume.svg";
 import queue from "../../assets/queue.svg";
 import expandImg from "../../assets/expandImg.svg";
+
 export default function Player({ picture }) {
+  const [audio] = useState(
+    new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+  );
+  const [play, setPlay] = useState(false);
+
+  useEffect(() => {
+    audio.addEventListener("ended", () => setPlay(false));
+
+    return () => {
+      audio.addEventListener("ended", () => setPlay(false));
+    };
+  }, []);
+
+  const togglePlay = () => {
+    setPlay(!play);
+    if (play) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  };
+
   return (
     <PlayerBG>
       <LeftContent>
@@ -40,7 +63,7 @@ export default function Player({ picture }) {
           <button className="control">
             <img src={back} />
           </button>
-          <button className="play">
+          <button className="play" onClick={togglePlay}>
             <img src={play} />
           </button>
           <button className="control">
