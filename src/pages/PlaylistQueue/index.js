@@ -8,17 +8,35 @@ import {
 } from "./styles";
 import play from "../../assets/play.svg";
 import Layout from "../../components/Layout";
+import { useEffect, useState } from "react";
+import api from "../../services/api";
+import { useSong } from "../../context/songContext";
+import { useUser } from "../../context/userContext";
 
-export default function PlaylistQueue({ playlist }) {
+export default function PlaylistQueue({ author, name, playlist }) {
+  const {ActivePlaylist, active, setActive} = useSong()
+  const {token} = useUser()
+  const {playlistData, setPlaylistData} = useState()
+  const [tracks, setTracks]= useState([])
+  useEffect(()=>{
+    api.get(`/playlist//${ActivePlaylist}`, token)
+    .then((res)=> {
+      console.log(res.data)
+      setTracks(res.data.tracks)
+    })
+    
+    .catch((err) => console.log(err))
+  },[])
   return (
     <Layout bg="var(--dark-third-color)">
       <PlaylistBG>
         <Container>
           <PlaylistHeader>
             <p className="title">PLAYLISTS</p>
-            <h1>As melhores do Rafoso</h1>
+            <h1>{name}</h1>
+            {/* <h1>{playlistData.name}</h1> */}
             <div>
-              <p>Rafinha Rafoso - 3 músicas</p>
+              <p>{author} - {tracks.length}</p>
             </div>
           </PlaylistHeader>
           <PlaylistPlayerDiv>
@@ -36,15 +54,15 @@ export default function PlaylistQueue({ playlist }) {
                   <th>ÁLBUM</th>
                 </thead>
                 <tbody>
-                  {playlist.map((music, index) => (
-                    <tr>
+                  {tracks.map((music, index) => (
+                    <tr onClick={()=> setActive(music.path)} id={music._id} key={music._id}>
                       <td>{index + 1}</td>
-                      <td>{music.title}</td>
-                      <td>{music.author}</td>
-                      <td>Álbum</td>
+                      <td><p className="text">{music.title}</p></td>
+                      <td><p className="text">{music.author}</p></td>
+                      <td><p className="text">{music.album}</p></td>
                       <td>
                         <audio controls>
-                          <source src={music.src} type="audio/wav" />
+                          <source src={music.path} type="audio/wav" />
                         </audio>
                       </td>
                     </tr>

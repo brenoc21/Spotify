@@ -37,12 +37,16 @@ function App() {
         <Route
           exac
           path="/PlaylistQueue"
-          element={<PlaylistQueue playlist={playlist} />}
+          element={<PlaylistQueue playlist={playlist}
+          name="playlist 1"
+          author="RafinhaRafoso" />}
         />
         <Route
           exac
           path="/PlaylistQueue2"
-          element={<PlaylistQueue playlist={playlist2} />}
+          element={<PlaylistQueue playlist={playlist2}
+          name="playlist 2"
+          author="RafinhaRafoso" />}
         />
         <Route exact path="/faq" element={<Faq />}></Route>
         <Route exac path="/playlist" element={<Playlist />}></Route>

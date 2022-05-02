@@ -4,12 +4,14 @@ export const SongContext = createContext({})
 
 export default function SongProvider({children}) {
     const [active, setActive] = useState(undefined);
-    return <SongContext.Provider value={{active, setActive}}>{children}</SongContext.Provider>;
+    const [ActivePlaylist, setActivePlaylist] = useState(undefined)
+    return <SongContext.Provider value={{active, setActive, ActivePlaylist, setActivePlaylist}}>{children}</SongContext.Provider>;
 
 }
 
 export function useSong() {
     const songContext = useContext(SongContext);
-    const {active, setActive} = songContext;
-    return {active, setActive};
+    
+    const {active, setActive, ActivePlaylist, setActivePlaylist} = songContext;
+    return {active, setActive, ActivePlaylist, setActivePlaylist};
 }
