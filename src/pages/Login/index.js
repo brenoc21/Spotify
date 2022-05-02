@@ -8,7 +8,9 @@ import { FcGoogle } from "react-icons/fc";
 import DateInput from "../../components/DateInput";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../../context/userContext";
 function Login() {
+  const {userId, setUserId, nick, setNick, token, setToken} = useUser()
   const [authData, setAuthData] = useState({});
   const [pConfirm, setPConfirm] = useState(false);
   const [eConfirm, setEConfirm] = useState(false);
@@ -23,8 +25,13 @@ function Login() {
     await api
       .post("/user/auth", authData)
       .then((res) => {
-        return res.data ? navigate("/playlist") : alert("error");
-      })
+        console.log(res.data.user._id)
+          setUserId(res.data.user._id)
+          setNick(res.data.user.nickname)
+          setToken(`Bearer ${res.data.jwt}`)
+        return(
+          navigate("/playlist")
+      )})
       .catch((error) => alert(error));
   }
   return (

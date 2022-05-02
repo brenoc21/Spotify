@@ -81,6 +81,7 @@ export const Table = styled.div`
       
       .table tbody tr{
         cursor: pointer;
+        
         &:hover {
             background: var(--gray);
             transition: width 2s;
@@ -96,7 +97,18 @@ export const Table = styled.div`
       }
       
       .table td {
+        width: 4rem;
+        
         color: var(--light-color);
         padding: 1rem 0;
+      }
+     .text{
+      width: 100%;
+        display: -webkit-box;
+   -webkit-line-clamp: 2; 
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 `;

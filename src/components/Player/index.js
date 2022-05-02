@@ -7,11 +7,12 @@ import {
   RangeInput,
   RightContent,
 } from "./styles";
-import play from "../../assets/play.svg";
+import playBtn from "../../assets/play.svg";
 import next from "../../assets/next.svg";
 import randomSong from "../../assets/randomSong.svg";
 import repeat from "../../assets/repeat.svg";
 import back from "../../assets/back.svg";
+import PauseBtn from '../../assets/PauseBtn.svg'
 import picture from "../../assets/Zoro.png";
 import like from "../../assets/like.svg";
 import expand from "../../assets/expand.svg";
@@ -20,11 +21,17 @@ import radio from "../../assets/radio.svg";
 import volume from "../../assets/volume.svg";
 import queue from "../../assets/queue.svg";
 import expandImg from "../../assets/expandImg.svg";
+import { useSong } from "../../context/songContext";
 
 export default function Player({ picture }) {
+  const active = useSong()
+ 
   const [audio] = useState(
-    new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+    new Audio(active.active)
   );
+  useEffect(()=> {
+    return(
+    console.log(active.active))}, [active])
   const [play, setPlay] = useState(false);
 
   useEffect(() => {
@@ -64,7 +71,7 @@ export default function Player({ picture }) {
             <img src={back} />
           </button>
           <button className="play" onClick={togglePlay}>
-            <img src={play} />
+            <img src={play ? playBtn : PauseBtn} />
           </button>
           <button className="control">
             <img src={next} />

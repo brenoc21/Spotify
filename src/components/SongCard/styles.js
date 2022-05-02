@@ -21,8 +21,14 @@ export const CardBg = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     .title {
+      display: -webkit-box;
+   -webkit-line-clamp: 1; 
+           line-clamp: 1; 
+   -webkit-box-orient: vertical;
       font-size: 16px;
       align-self: flex-start;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .artist {
       align-self: flex-start;
