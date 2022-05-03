@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../Logo";
 import { NavBackground, Options, OptionItem } from "./styles";
 import home from "../../assets/home.svg";
@@ -6,10 +6,13 @@ import library from "../../assets/Library.svg";
 import like from "../../assets/LikedSongs.svg";
 import search from "../../assets/Search.svg";
 import create from "../../assets/CreatePlaylist.svg";
+import EditProfileModal from "../EditProfileModal";
 
 export default function PlaylistNavbarLayout() {
+  const [isEditModal, setEditModal] = useState(false)
   return (
     <NavBackground>
+      {isEditModal ? <EditProfileModal onModalChange={setEditModal}/> : null}
       <div className="LogoContainer">
         <Logo type="footer"></Logo>
       </div>
@@ -37,6 +40,12 @@ export default function PlaylistNavbarLayout() {
             <img src={like} alt="like svg" />
           </div>
           Liked Songs
+        </OptionItem>
+        <OptionItem onClick={_ => setEditModal(true)}>
+          <div id="likedSongs">
+            <img src={like} alt="like svg"/>
+          </div>
+          Edit Profile
         </OptionItem>
       </Options>
     </NavBackground>

@@ -62,6 +62,7 @@ function Signin() {
                 type="email"
                 dataname={"email"}
                 isError={isError}
+                required={true}
               ></TextInput>
               <TextInput
                 setData={setRegisterData}
@@ -71,6 +72,7 @@ function Signin() {
                 type="email"
                 dataname={"emailConfirm"}
                 isError={isError}
+                required={true}
               ></TextInput>
               <TextInput
                 setData={setRegisterData}
@@ -80,6 +82,7 @@ function Signin() {
                 type="password"
                 dataname={"password"}
                 isError={isError}
+                required={true}
               ></TextInput>
               <TextInput
                 setData={setRegisterData}
@@ -89,6 +92,7 @@ function Signin() {
                 type="password"
                 dataname={"passwordConfirm"}
                 isError={isError}
+                required={true}
               ></TextInput>
               <TextInput
                 setData={setRegisterData}
