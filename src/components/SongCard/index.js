@@ -10,6 +10,7 @@ export default function SongCard({id, picture, title, artist }) {
   function handleClick(){
     console.log(id)
     setActivePlaylist(id)
+    localStorage.setItem("activePlaylist", id)
     console.log(ActivePlaylist)
     navigate("/playlistqueue")
   }

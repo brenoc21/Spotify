@@ -7,9 +7,29 @@ import like from "../../assets/LikedSongs.svg";
 import search from "../../assets/Search.svg";
 import create from "../../assets/CreatePlaylist.svg";
 import EditProfileModal from "../EditProfileModal";
+import api from "../../services/api";
+import { useUser } from "../../context/userContext";
+import { useSong } from "../../context/songContext";
+import { useNavigate } from "react-router-dom";
+import {ImExit} from "react-icons/im"
 
 export default function PlaylistNavbarLayout() {
   const [isEditModal, setEditModal] = useState(false)
+  const {token, setUserId,  setNick, setToken} = useUser()
+  const {reload, setReload} = useSong()
+  const navigate = useNavigate()
+  function handleCreatePlaylist(){
+    api.post("/playlist", {name: "My playlist"}, {headers: { authorization: `${token}` }})
+    .then(_=> setReload(!reload))
+    .catch(err => alert(err))
+  }
+  function handleLogout(){
+    navigate("/", {replace: true})
+    setUserId("")
+    setNick("")
+    setToken("")
+    localStorage.clear()
+  }
   return (
     <NavBackground>
       {isEditModal ? <EditProfileModal onModalChange={setEditModal}/> : null}
@@ -17,10 +37,10 @@ export default function PlaylistNavbarLayout() {
         <Logo type="footer"></Logo>
       </div>
       <Options>
-        <OptionItem>
+        <OptionItem onClick={()=> navigate("/playlist")}>
           <img src={home} alt="home svg" /> Home
         </OptionItem>
-        <OptionItem>
+        <OptionItem onClick={()=> navigate("/search")}>
           <img src={search} alt="search svg" />
           Search
         </OptionItem>
@@ -28,9 +48,13 @@ export default function PlaylistNavbarLayout() {
           <img src={library} alt="library svg" />
           Your Library
         </OptionItem>
+        <OptionItem onClick={_ => handleLogout()}>
+            <ImExit className="leave"/>
+          Logout
+        </OptionItem>
         <br />
-        <OptionItem>
-          <div id="createPlaylist">
+        <OptionItem onClick={()=> handleCreatePlaylist()}>
+          <div id="createPlaylist" >
             <img src={create} alt="create svg" />
           </div>
           Create
@@ -47,6 +71,7 @@ export default function PlaylistNavbarLayout() {
           </div>
           Edit Profile
         </OptionItem>
+       
       </Options>
     </NavBackground>
   );

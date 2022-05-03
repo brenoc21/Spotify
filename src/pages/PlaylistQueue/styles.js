@@ -17,9 +17,21 @@ export const PlaylistHeader = styled.div`
         margin-left: 1rem;
         font-weight: bold;
     }
+    .trash{
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: 0.2s;
+      :hover{
+        opacity: 1;
+      }
+    }
     h1 {
         margin-left: 1rem;
-        font-size: 100px;
+        font-size: 48px;
+        cursor: pointer;
     }
     div {
         display: inline-block;
@@ -112,3 +124,26 @@ export const Table = styled.div`
         text-overflow: ellipsis;
       }
 `;
+export const AddButton = styled.button`
+background-color: var(--main-color);
+align-self: center;
+margin-left: 5vw;
+margin-bottom: 2rem;
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+border-radius: 100vw;
+opacity: 0.8;
+width: 4rem;
+height: 4rem;
+cursor: pointer;
+transition: 0.2s;
+.svg{
+  width: 40%;
+  height: 40%;
+}
+:hover{
+  opacity: 1;
+}
+`

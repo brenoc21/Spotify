@@ -29,6 +29,9 @@ function Login() {
           setUserId(res.data.user._id)
           setNick(res.data.user.nickname)
           setToken(`Bearer ${res.data.jwt}`)
+          localStorage.setItem("token", `Bearer ${res.data.jwt}`)
+          localStorage.setItem("id", res.data.user._id)
+          localStorage.setItem("nickname", res.data.user.nickname)
         return(
           navigate("/playlist")
       )})

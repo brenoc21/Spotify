@@ -1,11 +1,16 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const UserContext = createContext({})
 
 export default function UserProvider({children}) {
-    const [userId, setUserId] = useState(undefined);
-    const [nick, setNick] = useState(undefined)
-    const [token, setToken] = useState()
+    useEffect(()=> {
+        setUserId(localStorage.getItem("id"))
+        setNick(localStorage.getItem("nickname"))
+        setToken(localStorage.getItem("token"))
+    },[])
+    const [userId, setUserId] = useState(localStorage.getItem("id"));
+    const [nick, setNick] = useState(localStorage.getItem("nickname"))
+    const [token, setToken] = useState(localStorage.getItem("token"))
     return <UserContext.Provider value={{token, setToken, userId, setUserId, nick, setNick}}>{children}</UserContext.Provider>;
 
 }

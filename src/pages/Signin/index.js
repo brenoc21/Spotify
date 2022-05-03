@@ -86,7 +86,7 @@ function Signin() {
               ></TextInput>
               <TextInput
                 setData={setRegisterData}
-                rData={registerData}
+                Data={registerData}
                 placeholder="Confirme sua senha aqui"
                 title="Confirmar"
                 type="password"
@@ -110,7 +110,7 @@ function Signin() {
               ></DateInput>
               <RadioInput
                 setData={setRegisterData}
-                rData={registerData}
+                Data={registerData}
                 options={["Masculino", "Feminino", "Outro"]}
                 title="Qual é o seu gênero?"
                 dataname={"genre"}

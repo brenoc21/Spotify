@@ -55,4 +55,9 @@ export const OptionItem = styled.li`
     height: auto;
     background-image: linear-gradient(135deg, #450af5, #c4efd9);
   }
+  .leave{
+    align-self: center;
+    width: 100%;
+    height: 100%;
+  }
 `;

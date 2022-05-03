@@ -5,8 +5,8 @@ import { RadioInputContainer, RadioBtn } from "./styles";
 function RadioInput({
   title,
   options,
-  setRegisterData,
-  registerData,
+  setData,
+  Data,
   dataname,
 }) {
   return (
@@ -32,8 +32,8 @@ function RadioInput({
                   }
                   required
                   onChange={(e) =>
-                    setRegisterData({
-                      ...registerData,
+                    setData({
+                      ...Data,
                       [dataname]: e.target.value,
                     })
                   }

@@ -3,8 +3,8 @@ import { DateInputBg } from "./styles";
 
 export default function DateInput({
   title,
-  setRegisterData,
-  registerData,
+  setData,
+  Data,
   dataname,
 }) {
   return (
@@ -14,7 +14,7 @@ export default function DateInput({
         id="date"
         type="date"
         onChange={(e) =>
-          setRegisterData({ ...registerData, [dataname]: e.target.value })
+          setData({ ...Data, [dataname]: e.target.value })
         }
       ></input>
     </DateInputBg>

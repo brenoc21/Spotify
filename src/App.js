@@ -6,28 +6,11 @@ import Playlist from "./pages/Playlist";
 import PlaylistQueue from "./pages/PlaylistQueue";
 import Signin from "./pages/Signin";
 import Login from "./pages/Login";
+import Search from "./pages/Search";
 function App() {
-  const playlist = [
-    {
-      title: "Hide Your Heart",
-      author: "Mineiro",
-      src: "../../music/hide-your-heart.wav",
-    },
-    {
-      title: "N.P.O",
-      author: "Augusto",
-      src: "../../music/npo.wav",
-    },
-  ];
-
-  const playlist2 = [
-    {
-      title: "Starlight",
-      author: "Pagodão Waifoso",
-      src: "../../music/starlight.wav",
-    },
-  ];
-
+  document.addEventListener("contextmenu", (event) => {
+    event.preventDefault()
+  })
   return (
     <div className="App">
       <GlobalStyle />
@@ -37,19 +20,20 @@ function App() {
         <Route
           exac
           path="/PlaylistQueue"
-          element={<PlaylistQueue playlist={playlist}
+          element={<PlaylistQueue
           name="playlist 1"
           author="RafinhaRafoso" />}
         />
         <Route
           exac
           path="/PlaylistQueue2"
-          element={<PlaylistQueue playlist={playlist2}
+          element={<PlaylistQueue
           name="playlist 2"
           author="RafinhaRafoso" />}
         />
         <Route exact path="/faq" element={<Faq />}></Route>
         <Route exac path="/playlist" element={<Playlist />}></Route>
+        <Route exac path="/search" element={<Search/>}></Route>
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
