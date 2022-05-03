@@ -5,12 +5,12 @@ export const Background = styled.div`
     min-height: 100%;
     background-color: var(--dark-third-color);
     display: flex;
+    gap: 5rem;
     flex-direction: column;
     align-items: center;
 `;
 export const SearchBarContainer = styled.div`
 width: 50%;
-position: relative;
 padding: 1rem;
 height: 1rem;
 `
@@ -24,7 +24,12 @@ border-radius: 100vw;
 `
 export const SongsContainer = styled.div`
 height: 20rem;
-overflow: auto;
 width: 90%;
-
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+export const SongItem = styled.div`
+display: flex;
+gap: 1rem;
 `
