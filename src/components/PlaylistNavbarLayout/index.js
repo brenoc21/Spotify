@@ -34,13 +34,13 @@ export default function PlaylistNavbarLayout() {
     <NavBackground>
       {isEditModal ? <EditProfileModal onModalChange={setEditModal}/> : null}
       <div className="LogoContainer">
-        <Logo type="footer"></Logo>
+        <Logo type="footer" path="/playlist"></Logo>
       </div>
       <Options>
         <OptionItem onClick={()=> navigate("/playlist")}>
           <img src={home} alt="home svg" /> Home
         </OptionItem>
-        <OptionItem onClick={()=> navigate("/search")}>
+        <OptionItem>
           <img src={search} alt="search svg" />
           Search
         </OptionItem>

@@ -9,6 +9,7 @@ import DateInput from "../../components/DateInput";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/userContext";
+import Logo from "../../components/Logo";
 function Login() {
   const {userId, setUserId, nick, setNick, token, setToken} = useUser()
   const [authData, setAuthData] = useState({});
@@ -33,7 +34,7 @@ function Login() {
           localStorage.setItem("id", res.data.user._id)
           localStorage.setItem("nickname", res.data.user.nickname)
         return(
-          navigate("/playlist")
+          navigate("/playlist", {replace: true})
       )})
       .catch((error) => alert(error));
   }
@@ -41,7 +42,7 @@ function Login() {
     <Background>
       <div id="Content-Container">
         <div class="main-container">
-          <img src="../assets/Shrimp.svg"></img>
+          <Logo path="/"/>
           <h1>Inscreva-se grátis e comece a curtir.</h1>
           <div id="Main-Content">
             <div id="Alternative-Login-Container">

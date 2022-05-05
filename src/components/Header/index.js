@@ -6,7 +6,7 @@ export default function Header() {
   const navigate = useNavigate();
   return (
     <HeaderBackground>
-      <Logo></Logo>
+      <Logo path="/"></Logo>
       <ItemsContainer>
         <HeaderItem onClick={() => navigate("/playlist")}>Premium</HeaderItem>
         <HeaderItem onClick={() => navigate("/faq")}>Suporte</HeaderItem>

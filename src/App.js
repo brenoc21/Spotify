@@ -33,7 +33,6 @@ function App() {
         />
         <Route exact path="/faq" element={<Faq />}></Route>
         <Route exac path="/playlist" element={<Playlist />}></Route>
-        <Route exac path="/search" element={<Search/>}></Route>
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>

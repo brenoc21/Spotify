@@ -37,7 +37,7 @@ function Signin() {
     <Background>
       <div id="Content-Container">
         <div class="main-container">
-          <img src="../assets/Shrimp.svg"></img>
+          <Logo path="/"></Logo>
           <h1>Inscreva-se grátis e comece a curtir.</h1>
           <div id="Main-Content">
             <div id="Alternative-Login-Container">

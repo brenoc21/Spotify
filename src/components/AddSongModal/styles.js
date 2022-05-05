@@ -15,7 +15,24 @@ width: 60%;
 height: 60%;
 background-color: #282828;
 border-radius: 10px;
+display: flex;
+flex-direction: column;
 padding: 3rem;
+.searchbar{
+    align-self: center;
+    width: 96%;
+    height: 2rem;
+    padding: 1rem;
+    color: var(--white);
+    border: none;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: rgba(255,255,255, 0.1);
+    transition: 0.3s;
+    :focus{
+        border: 1px solid rgba(255,255,255, 0.7);
+    }
+}
 `
 export const TrackContainer = styled.div`
 display: flex;
