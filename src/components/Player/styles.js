@@ -16,7 +16,7 @@ export const LeftContent = styled.div`
   align-items: center;
   gap: 0.9rem;
   .songImage {
-    height: 3.2rem;
+    height: 5.2rem;
     width: auto;
     cursor: pointer;
   }

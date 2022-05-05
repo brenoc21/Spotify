@@ -23,7 +23,7 @@ import queue from "../../assets/queue.svg";
 import expandImg from "../../assets/expandImg.svg";
 import { useSong } from "../../context/songContext";
 
-export default function Player({ picture }) {
+export default function Player() {
   const active = useSong()
  
   const [audio] = useState(
